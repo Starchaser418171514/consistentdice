@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class dicegame {
+public class GameMain {
   public static void main(String [] args) {
     
   }
