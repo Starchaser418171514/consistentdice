@@ -1,0 +1,12 @@
+
+// This one is player's competitpor, so it just random play, no big deals
+public Move chooseMove(GameState state) {
+    ArrayList<Move> moves = state.generatePossibleMoves();
+
+    if (moves.isEmpty()) {
+        return null; // no possible moves
+    }
+
+    Random rand = new Random();
+    return moves.get(rand.nextInt(moves.size()));
+}
