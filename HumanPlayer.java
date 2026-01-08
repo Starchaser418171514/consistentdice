@@ -13,13 +13,9 @@ public class HumanPlayer extends Player {
         scanner = new Scanner(System.in);
     }
 
-    /**
-     * @return an array of two integers: {pieceNumber, targetSquare}
-     */
     @Override
     public int[] chooseMove(int diceValue) {
         Map<Integer, List<Integer>> possibleMoves = GameState.generatePossibleMoves(diceValue);
-
         if (possibleMoves.isEmpty()) {
             System.out.println("No available moves for dice value " + diceValue);
             return null;
@@ -58,9 +54,9 @@ public class HumanPlayer extends Player {
 
         int[] selectedMove = moveMap.get(choice);
 
-
         super.logMove(selectedMove[0], selectedMove[1]);
 
         return selectedMove;
     }
 }
+
