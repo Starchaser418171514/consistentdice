@@ -14,9 +14,6 @@ public class HumanPlayer extends Player {
     }
 
     /**
-     player choose a move from possible moves.
-     *
-     * @param diceValue the current dice value
      * @return an array of two integers: {pieceNumber, targetSquare}
      */
     @Override
@@ -52,15 +49,16 @@ public class HumanPlayer extends Player {
                 if (moveMap.containsKey(choice)) {
                     break;
                 }
-            } else {
-                scanner.next(); // discard invalid input
             }
-            System.out.println("Invalid choice. Please try again.");
+            else {
+                scanner.next(); 
+            }
+            System.out.println("Invalid choice, please try again.");
         }
 
         int[] selectedMove = moveMap.get(choice);
 
-        // Log the move to moves.txt via Player's method
+
         super.logMove(selectedMove[0], selectedMove[1]);
 
         return selectedMove;
