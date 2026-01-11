@@ -103,14 +103,16 @@ public class GameState {
         return possibleMoves;
     }
 
-}
 public static boolean isWinning(int targetPiece) {
     if (moveData == null || moveData.isEmpty()) {
         return false;
-    }
+        }
     //Get the current board stat
     List<Integer> currentPieces = moveData.get(moveData.size() - 1);
     // Get the position of the target piece
     int currentPosition = currentPieces.get(targetPiece - 1);
     return currentPosition == 0;
+    }
+
 }
+
