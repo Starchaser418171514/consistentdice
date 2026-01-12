@@ -1,4 +1,4 @@
-
+public class RandomPlayer extends Player {
 public Move chooseMove(GameState state) {
     ArrayList<Move> moves = state.generatePossibleMoves();
 
@@ -8,4 +8,5 @@ public Move chooseMove(GameState state) {
 
     Random rand = new Random();
     return moves.get(rand.nextInt(moves.size()));
+}
 }
