@@ -61,16 +61,15 @@ public class GameLoader {
             System.out.println("File not found.");
         }
 
-        input.close();
     }
 
     /**
      * Prints the setup details into moves.txt, call this only at the start of the
      * game.
      */
-    public static void printGameDetails() {
+    public static void printGameDetails(Player player) {
         List<String> OStream = new ArrayList<>();
-        OStream.add("Human Player"); // Replace with relevant function calls to get player types
+        OStream.add(player.playerName); // Player name
         OStream.add(levelData.get(2).stream().map(String::valueOf).collect(Collectors.joining(" "))); // Dice values
         OStream.add(levelData.get(0).get(0).toString()); // target piece
         OStream.add(levelData.get(1).stream().map(String::valueOf).collect(Collectors.joining(" "))); //Starting piece positions
