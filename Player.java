@@ -27,11 +27,16 @@ public abstract class Player {
         List<Integer> currentState = GameState.moveData.get(GameState.moveData.size() - 1);
         List<Integer> newState = new java.util.ArrayList<>(currentState);
 
+        for (int i = 0; i < currentState.size(); i++) {
+            if (currentState.get(i) == newPos) {
+                newState.set(i, -1); // Set captured piece position to -1
+            }
+        }
         newState.set(piece - 1, newPos);
         GameState.moveData.add(newState);
 
         printMove(newState);
     }
-  
+
     public abstract int[] chooseMove(int diceValue);
 }
