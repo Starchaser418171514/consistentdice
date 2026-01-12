@@ -49,13 +49,6 @@ public class GameLoader {
                 levelData.add(numRow);
             }
 
-            for (List<Integer> row : levelData) {
-                for (Integer num : row) {
-                    System.out.print(num + " ");
-                }
-                System.out.println();
-            }
-
             IStream.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
