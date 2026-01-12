@@ -10,7 +10,12 @@ public class HumanPlayer extends Player {
     private Scanner scanner;
 
     public HumanPlayer() {
+        this("Player 1");
+    }
+
+    public HumanPlayer(String name) {
         scanner = new Scanner(System.in);
+        super(name);
     }
 
     @Override
@@ -21,7 +26,7 @@ public class HumanPlayer extends Player {
             return null;
         }
 
-        System.out.println("\nDice rolled: " + diceValue);
+        System.out.println("\nCurrent die: " + diceValue);
         System.out.println("Available moves:");
 
         int count = 1;
